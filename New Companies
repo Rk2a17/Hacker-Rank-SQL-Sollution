@@ -1,0 +1,9 @@
+Prepare > SQL > Advance select > New Companies
+____________________________________________________
+SELECT company_code, founder,
+    (SELECT count(DISTINCT lead_manager_code) FROM Lead_Manager where company_code = C.company_code),
+    (SELECT count(DISTINCT senior_manager_code) FROM Senior_Manager where company_code= C.company_code),
+    (SELECT count(DISTINCT manager_code) FROM Manager where company_code= C.company_code),
+    (SELECT count(DISTINCT employee_code) FROM Employee where company_code= C.company_code)
+from company C
+ORDER BY company_code;
