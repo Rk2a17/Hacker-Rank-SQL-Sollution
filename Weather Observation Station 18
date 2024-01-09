@@ -1,0 +1,13 @@
+HackerRank > Prepare > SQL > Aggregation > Weather Observation Station 18
+___________________________________________________________________________
+/*
+(a,b) (c,d) so the manhattan formaula will be:
+manhattan distance = |a-c|+|b-d|
+*/
+_________________________________________________
+
+
+SELECT ROUND(ABS(min(LAT_N)- max(LAT_N))
+                          +
+             ABS(min(LONG_W)- max(LONG_W)),4)
+FROM STATION;
